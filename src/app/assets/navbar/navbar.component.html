@@ -3,14 +3,15 @@
         <a href="#" class="brand-logo"> <img class="materialboxed" width="160"
                 src="https://i.ibb.co/wBs39Yj/croitre-Log.png"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a routerLink="/admin/get">Usuarios</a></li>
-            <li><a routerLink="/aeropuerto/get">Aeropuertos</a></li>
-            <li><a routerLink="/ruta/get">Rutas</a></li>
-            <li><a routerLink="/vuelo/get">Vuelos</a></li>
+            <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+            <li *ngIf="activeSession"><a routerLink="/aeropuerto/get">Aeropuertos</a></li>
+            <li *ngIf="activeSession"><a routerLink="/ruta/get">Rutas</a></li>
+            <li *ngIf="activeSession"><a routerLink="/vuelo/get">Vuelos</a></li>
 
 
             <!-- Sesion -->
             <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+            <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarse</a></li>
             <li *ngIf="activeSession"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
 
 

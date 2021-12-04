@@ -9,7 +9,8 @@ const routes: Routes = [
     path: 'create',
     component: CreateComponent,
   },{
-    path: 'edit',
+    //agregar el id como adicional para poder editar
+    path: 'edit/:id',
     component: EditComponent,
   },{
     path: 'get',

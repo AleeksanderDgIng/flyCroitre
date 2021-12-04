@@ -1,1 +1,41 @@
-<p>get works!</p>
+<div class="container">
+    <div class="section"></div>
+    <a routerLink="/ruta/create" class="btn-large deep-purple darken-3"><i
+            class="material-icons left">timeline</i> Registrar Ruta</a>
+    <div class="section"></div>
+    <table class="table responsive striped bordered">
+
+        <thead>
+            <tr>
+                <th>Tiempo estimado</th>
+                <th>Origen</th>
+                <th>destino</th>
+
+                <th>Editar</th>
+                <th>Eliminar</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of listado">
+                <td>{{p.tiempoEstimado}}</td>
+                <td>{{p.origen}}</td>
+                <td>{{p.destino}}</td>
+
+
+                <td>
+                    <a routerLink="/ruta/edit/{{p.id}}"
+                        class="btn-floating btn-large waves-effect deep-purple darken-3"><i
+                            class="material-icons">edit</i></a>
+                </td>
+                <td>
+                    <button class="btn-floating btn-large waves-effect waves-light red" (click)="delete(p.id)"><i
+                            class="material-icons">delete_sweep</i></button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="section"></div>
+</div>

@@ -1,1 +1,45 @@
-<p>get works!</p>
+<div class="container">
+    <div class="section"></div>
+    <a routerLink="/vuelo/create" class="btn-large deep-purple darken-3"><i class="material-icons left">flight_takeoff</i> Registrar Vuelo</a>
+    <div class="section"></div>
+    <table class="table responsive striped bordered">
+  
+      <thead>
+        <tr>
+          <th>Fecha inicio</th>
+          <th>Hora inicio</th>
+          <th>Fecha fin</th>
+          <th>Hora fin</th>
+          <th>Asientos vendidos</th>
+          <th>Nombre piloto</th>
+          <th>Ruta</th>
+  
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let p of listado">
+          <td>{{p.fechaInicio}}</td>
+          <td>{{p.horaInicio}}</td>
+          <td>{{p.fechaFin}}</td>
+          <td>{{p.horaFin}}</td>
+          <td>{{p.asientosVendidos}}</td>
+          <td>{{p.nombrePiloto}}</td>
+          <td>{{p.ruta}}</td>
+          
+          <td>
+            <a routerLink="/vuelo/edit/{{p.id}}" class="btn-floating btn-large waves-effect deep-purple darken-3"><i
+                class="material-icons">edit</i></a>
+          </td>
+          <td>
+            <button class="btn-floating btn-large waves-effect waves-light red" (click)="delete(p.id)"><i
+                class="material-icons">delete_sweep</i></button>
+          </td>
+        </tr>
+      </tbody>
+  
+    </table>
+    <div class="section"></div>
+  </div>
