@@ -55,11 +55,23 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="material-icons prefix">done</i>
-                                <input formControlName="tipo" type="text" class="validate">
-                                <label for="tipo">Tipo</label>
+                                <div><label class="active" for="tipo">Tipo de aeropuerto</label></div>
+                                <select class="browser-default" formControlName="tipo" type="text">
+                                  <option class="validate" value="" disabled selected>Seleccione el tipo de aeropuerto</option>
+                                  <option class="validate" value="Aeropuerto civil">Aeropuerto civil</option>
+                                  <option class="validate" value="Aeropuerto de aviación corporativa">Aeropuerto de aviación corporativa</option>
+                                  <option class="validate" value="Aeropuerto de aviación general">Aeropuerto de aviación general</option>
+                                  <option class="validate" value="Aeropuerto de carga aérea">Aeropuerto de carga aérea</option>
+                                  <option class="validate" value="Aeropuerto comercial">Aeropuerto comercial</option>
+                                  <option class="validate" value="Aeropuerto regional/Nacional">Aeropuerto regional/Nacional</option>
+                                  <option class="validate" value="Aeropuerto turístico">Aeropuerto turístico</option>
+                                  <option class="validate" value="Aeropuerto low-cost">Aeropuerto low-cost</option>
+                                  <option class="validate" value="Aeropuerto hub">Aeropuerto hub</option>
+                                  <option class="validate" value="aeropuerto militar o base aerea militar">aeropuerto militar o base aerea militar</option>
+                                </select>
+                              </div>
                             </div>
-                        </div>
+
 
                         <div class="row">
                             <div class="input-field col s12">

@@ -46,25 +46,32 @@
                             </div>
                         </div>
 
-              
 
-                        <div class="input-field col s12">
-                            <select class="browser-default" formControlName="nombrePiloto" type="text">
-                              <option class="validate" value="" disabled selected>Seleccione el nombre del piloto</option>
-                              <option class="validate" value="Michael Schumacher">Michael Schumacher</option>
-                              <option class="validate" value="Tom F. Hazell">Tom F. Hazell</option>
-                              <option class="validate" value="Fernando Alonso">Fernando Alonso</option>
-                              <option class="validate" value="Paul Baumer">Paul Baumer</option>
-                            </select>
-                          </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div><label class="active" for="tipo">Nombre del piloto</label></div>
+                                <select class="browser-default" formControlName="nombrePiloto" type="text">
+                                    <option class="validate" value="" disabled selected>Seleccione el nombre del piloto
+                                    </option>
+                                    <option class="validate" value="Michael Schumacher">Michael Schumacher</option>
+                                    <option class="validate" value="Tom F. Hazell">Tom F. Hazell</option>
+                                    <option class="validate" value="Fernando Alonso">Fernando Alonso</option>
+                                    <option class="validate" value="Paul Baumer">Paul Baumer</option>
+                                </select>
+                            </div>
+                        </div>
 
-
-                        <div class="input-field col s12"> 
-                            <select class="browser-default" formControlName="ruta">
-                                <option class="validate" value="" disabled selected>Seleccione la ruta --> Ruta</option>
-                                <option class="validate" *ngFor="let ruta of listadoRutas" value="Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}">
-                                    Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}</option>
-                            </select>                             
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div><label class="active" for="tipo">Ruta del vuelo</label></div>
+                                <select class="browser-default" formControlName="ruta">
+                                    <option class="validate" value="" disabled selected>Seleccione la ruta --> Ruta
+                                    </option>
+                                    <option class="validate" *ngFor="let ruta of listadoRutas"
+                                        value="Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}">
+                                        Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}</option>
+                                </select>
+                            </div>
                         </div>
 
 
@@ -77,7 +84,7 @@
                                 </button>
                             </div>
                         </div>
- 
+
                     </form>
                 </div>
             </div>

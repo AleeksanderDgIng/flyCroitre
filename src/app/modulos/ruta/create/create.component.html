@@ -16,21 +16,31 @@
                                 <label for="tiempoEstimado">Tiempo Estimado</label>
                             </div>
                         </div>
-                
-                        <div class="input-field col s12"> 
-                            <select class="browser-default" formControlName="origen">
-                                <option class="validate" value="" disabled selected>Seleccione el aeropuerto --> Origen</option>
-                                <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
-                                    {{aeropuerto.nombre}}</option>
-                            </select>                             
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div><label class="active" for="tipo">Origen</label></div>
+                                <select class="browser-default" formControlName="origen">
+                                    <option class="validate" value="" disabled selected>Seleccione el aeropuerto -->
+                                        Origen</option>
+                                    <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos"
+                                        value="{{aeropuerto.nombre}} -> {{aeropuerto.ciudad}} ({{aeropuerto.pais}})">
+                                        {{aeropuerto.nombre}} -> {{aeropuerto.ciudad}} ({{aeropuerto.pais}})</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="input-field col s12"> 
-                            <select class="browser-default" formControlName="destino">
-                                <option class="validate" value="" disabled selected>Seleccione el aeropuerto --> Destino</option>
-                                <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
-                                    {{aeropuerto.nombre}}</option>
-                            </select>                             
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div><label class="active" for="tipo">Destino</label></div>
+                                <select class="browser-default" formControlName="destino">
+                                    <option class="validate" value="" disabled selected>Seleccione el aeropuerto -->
+                                        Destino</option>
+                                    <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos"
+                                        value="{{aeropuerto.nombre}} -> {{aeropuerto.ciudad}} ({{aeropuerto.pais}})">
+                                        {{aeropuerto.nombre}} -> {{aeropuerto.ciudad}} ({{aeropuerto.pais}})</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -52,8 +62,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
