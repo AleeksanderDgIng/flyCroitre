@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RutaModelo } from 'src/app/modelos/ruta.model';
 import { VueloModelo } from 'src/app/modelos/vuelo.model';
+import { RutaService } from 'src/app/servicios/ruta.service';
 import { VueloService } from 'src/app/servicios/vuelo.service';
 import Swal from 'sweetalert2'
 
@@ -16,8 +18,11 @@ export class EditComponent implements OnInit {
     private fb: FormBuilder,
     private vueloService: VueloService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private rutaService: RutaService,
   ) { }
+
+  listadoRutas: RutaModelo[] = []
 
   //Creamos las variables de validación y para capturar el id 
   fgValidacion = this.fb.group({
@@ -37,6 +42,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"]
     this.buscarRegistro(this.id);
+    this.getAllRutas()
   }
 
   //método para traer la informacion del registro
@@ -73,6 +79,13 @@ export class EditComponent implements OnInit {
     (error: any) => {
       console.log(error)
       alert("Error en el envio");
+    })
+  }
+
+  getAllRutas(){
+    this.rutaService.getAll().subscribe((data: RutaModelo[]) => {
+      this.listadoRutas = data
+      console.log(data)
     })
   }
 

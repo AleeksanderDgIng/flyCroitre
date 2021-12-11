@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AeropuertoModelo } from 'src/app/modelos/aeropuerto.model';
 import { RutaModelo } from 'src/app/modelos/ruta.model';
+import { AeropuertoService } from 'src/app/servicios/aeropuerto.service';
 import { RutaService } from 'src/app/servicios/ruta.service';
 import Swal from 'sweetalert2'
 
@@ -12,11 +14,14 @@ import Swal from 'sweetalert2'
 })
 export class EditComponent implements OnInit {
 
+  listadoAeropuertos: AeropuertoModelo[] = []
+
   constructor(
     private fb: FormBuilder,
     private rutaService: RutaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private aeropuertoService: AeropuertoService
   ) { }
 
 //Creamos las variables de validación y para capturar el id 
@@ -33,6 +38,7 @@ id: string=''
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"]
     this.buscarRegistro(this.id);
+    this.getAllAeropuertos();
   }
 
   //método para traer la informacion del registro
@@ -61,6 +67,14 @@ id: string=''
     (error: any) => {
       console.log(error)
       alert("Error en el envio");
+    })
+  }
+
+
+  getAllAeropuertos(){
+    this.aeropuertoService.getAll().subscribe((data: AeropuertoModelo[]) => {
+      this.listadoAeropuertos = data
+      console.log(data)
     })
   }
 

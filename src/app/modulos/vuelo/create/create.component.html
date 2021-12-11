@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">schedule</i>
-                                <input formControlName="horaInicio" type="text" class="validate">
+                                <input formControlName="horaInicio" type="time" class="validate">
                                 <label for="horaInicio">Hora de inicio</label>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">schedule</i>
-                                <input formControlName="horaFin" type="text" class="validate">
+                                <input formControlName="horaFin" type="time" class="validate">
                                 <label for="horaFin">hora fin</label>
                             </div>
                         </div>
@@ -46,21 +46,27 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">person</i>
-                                <input formControlName="nombrePiloto" type="text" class="validate">
-                                <label for="nombrePiloto">Nombre piloto</label>
-                            </div>
+              
+
+                        <div class="input-field col s12">
+                            <select class="browser-default" formControlName="nombrePiloto" type="text">
+                              <option class="validate" value="" disabled selected>Seleccione el nombre del piloto</option>
+                              <option class="validate" value="Michael Schumacher">Michael Schumacher</option>
+                              <option class="validate" value="Tom F. Hazell">Tom F. Hazell</option>
+                              <option class="validate" value="Fernando Alonso">Fernando Alonso</option>
+                              <option class="validate" value="Paul Baumer">Paul Baumer</option>
+                            </select>
+                          </div>
+
+
+                        <div class="input-field col s12"> 
+                            <select class="browser-default" formControlName="ruta">
+                                <option class="validate" value="" disabled selected>Seleccione la ruta --> Ruta</option>
+                                <option class="validate" *ngFor="let ruta of listadoRutas" value="Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}">
+                                    Origen: {{ruta.origen}} --> Destino: {{ruta.destino}}</option>
+                            </select>                             
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">timeline</i>
-                                <input formControlName="ruta" type="text" class="validate">
-                                <label for="ruta">Ruta</label>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -71,7 +77,7 @@
                                 </button>
                             </div>
                         </div>
-
+ 
                     </form>
                 </div>
             </div>

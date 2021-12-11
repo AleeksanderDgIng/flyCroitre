@@ -1,5 +1,94 @@
-<h1>index works!</h1>
-<p>Usuario logueado!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parallax Scrolling In UiKit</title>
 
 
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+        }
 
+        .img-1 {
+            background-image: url('https://i.ibb.co/RTCqQN1/v1mt.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .img-2 {
+            background-image: url('https://i.ibb.co/5BQ2dGc/v2mt.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .img-3 {
+            background-image: url('https://i.ibb.co/qnLDjbw/v3mt.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .img-4 {
+            background-image: url('https://i.ibb.co/5vR1ZHP/v4mt.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            font-size: 120px;
+            height: 100%;
+            margin: 0;
+        }
+
+        a {
+            outline: none;
+            text-decoration: none;
+            padding: 2px 1px 0;
+        }
+
+        a:link {
+            color: #fff;
+        }
+
+        a:visited {
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="uk-background-fixed img-1">
+        <h1 *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></h1>
+
+    </div>
+    <div class="uk-background-fixed img-2">
+        <h1 *ngIf="activeSession"><a routerLink="/aeropuerto/get">Aeropuertos</a></h1>
+    </div>
+    <div class="uk-background-fixed img-3">
+        <h1 *ngIf="activeSession"><a routerLink="/ruta/get">Rutas</a></h1>
+    </div>
+
+    <div class="uk-background-fixed img-4">
+        <h1 *ngIf="activeSession"><a routerLink="/vuelo/get">Vuelos</a></h1>
+    </div>
+</body>
+
+</html>

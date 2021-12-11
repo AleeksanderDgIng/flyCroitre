@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { Subscription } from 'rxjs';
+import { UsuarioModelo } from 'src/app/modelos/usuario.model';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seguridadService: SeguridadService) { }
+
+  activeSession?:boolean = false;
+  subs: Subscription = new Subscription();
 
   ngOnInit(): void {
+    this.subs = this.seguridadService.datosUsuarioSesion().subscribe((data: UsuarioModelo) => {
+      console.log(data)
+        this.activeSession = data.isLoggedIn;
+    })
   }
 
 }

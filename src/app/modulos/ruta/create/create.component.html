@@ -1,9 +1,9 @@
 <div class="container">
     <div class="section"></div>
     <div class="row">
-        <div class="col s12 m6 l1"> </div>
+        <div class="col s12 m6 l3"> </div>
 
-        <div class="col s12 m4 l10">
+        <div class="col s12 m4 l6">
             <div id="prefixes" class="card card card-default scrollspy">
                 <div class="card-content">
                     <h3 class="card-title center">Registrar Ruta</h3>
@@ -16,21 +16,22 @@
                                 <label for="tiempoEstimado">Tiempo Estimado</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">location_on</i>
-                                <input formControlName="origen" type="text" class="validate">
-                                <label for="origen">Origen</label>
-                            </div>
+                
+                        <div class="input-field col s12"> 
+                            <select class="browser-default" formControlName="origen">
+                                <option class="validate" value="" disabled selected>Seleccione el aeropuerto --> Origen</option>
+                                <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
+                                    {{aeropuerto.nombre}}</option>
+                            </select>                             
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">location_on</i>
-                                <input formControlName="destino" type="text" class="validate">
-                                <label for="destino">Destino</label>
-                            </div>
+
+                        <div class="input-field col s12"> 
+                            <select class="browser-default" formControlName="destino">
+                                <option class="validate" value="" disabled selected>Seleccione el aeropuerto --> Destino</option>
+                                <option class="validate" *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
+                                    {{aeropuerto.nombre}}</option>
+                            </select>                             
                         </div>
-                        
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -46,8 +47,13 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m6 l1">
+        <div class="col s12 m6 l3">
 
         </div>
     </div>
 </div>
+
+
+
+
+

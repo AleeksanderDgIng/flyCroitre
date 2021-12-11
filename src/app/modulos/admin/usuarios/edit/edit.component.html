@@ -1,15 +1,15 @@
 <div class="container">
     <div class="section"></div>
     <div class="row">
-        <div class="col s12 m6 l1"></div>
-        <div class="col s12 m4 l10">
+        <div class="col s12 m6 l3"></div>
+        <div class="col s12 m4 l6">
             <div id="prefixes" class="card card card-default scrollspy">
                 <div class="card-content">
                     <h3 class="card-title center">Editar Usuario</h3>
 
-                    <form [formGroup]="fgValidacion"  (ngSubmit)="edit()">
+                    <form [formGroup]="fgValidacion" (ngSubmit)="edit()">
                         <input formControlName="id" type="hidden" class="validate">
-                        
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
@@ -43,7 +43,9 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <button [disabled]="!fgValidacion.valid" class="btn-large deep-purple darken-2 waves-effect waves-light right" type="submit" name="action">Enviar
+                                    <button [disabled]="!fgValidacion.valid"
+                                        class="btn-large deep-purple darken-2 waves-effect waves-light right"
+                                        type="submit" name="action">Enviar
                                         <i class="material-icons right">send</i>
                                     </button>
                                 </div>
@@ -54,8 +56,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m6 l1">
-            
+        <div class="col s12 m6 l3">
+
         </div>
     </div>
 </div>
